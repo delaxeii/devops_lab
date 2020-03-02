@@ -17,6 +17,5 @@ for m in robot:
         y = y - 1
     else:
         y = y - 1
-
 # Output
-print ("Circular motion:\n", (x == 0 and y == 0))
+print("Circular motion:\n", (x == 0 and y == 0))
