@@ -1,0 +1,66 @@
+#!/usr/bin/env python
+
+import psutil
+import json
+import time
+import argparse
+
+parser = argparse.ArgumentParser(description='System monitoring')
+parser.add_argument('interval', type=int, nargs='?', const=1, default=300, help='Time interval')
+parser.add_argument('data_type', type=str, nargs='?', const=1, default='txt', help='txt or json.')
+args = parser.parse_args()
+
+class Snapshot:
+
+    snapCount = 0
+
+    def __init__(self):
+        Snapshot.snapCount += 1
+        self.cpu = psutil.cpu_times()
+        self.disk = psutil.disk_usage('/')
+        self.memory = psutil.virtual_memory()
+        self.disk_io = psutil.disk_io_counters()
+        self.net_io = psutil.net_io_counters()
+
+    def var (self):
+        shot = " CPU: " + str(self.cpu) + "%" + " Memory: " \
+                + str(self.disk) + "% RAM: " + str(self.memory) \
+                + "% IO Information: " + str(self.disk_io) + " Network Information: " + str(self.net_io) + '\n'
+        return shot
+
+x = 0
+
+if args.data_type == 'txt':
+
+    while True:
+        x += 1
+        skr = Snapshot()
+        end_file = open('snapshots.txt', 'a+')
+        sn = "SNAPSHOT " + str(x) + ": " + "TIMESTAMP: " + str(time.ctime())
+        en = sn + skr.var()
+        end_file.write(en)
+        end_file.close()
+        time.sleep(args.interval)
+
+elif args.data_type == 'json':
+
+    while True:
+        x += 1
+        skr = Snapshot()
+
+        s = {
+            'SNAPSHOT': str(x), 'Time STAMP': str(time.ctime()),
+            'CPU': skr.cpu,
+            'MEM': skr.disk,
+            'Virtual Memory': skr.memory,
+            'IO Information': skr.disk_io,
+            'Network Information': skr.net_io
+            }
+
+        with open("snapshots.json", 'a+') as f:
+            json.dump(s, f)
+            f = open('snapshots.json', 'a+')
+            f.write('\n')
+            f.close()
+
+        time.sleep(args.interval)
