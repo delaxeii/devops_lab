@@ -28,6 +28,10 @@ class Snapshot:
                 + "% IO Information: " + str(self.disk_io) + " Network Information: " + str(self.net_io) + '\n'
         return shot
 
+    def var1 (self):
+        shot1 = str(Snapshot.snapCount)
+        return shot1
+
 x = 0
 
 if args.data_type == 'txt':
@@ -36,8 +40,8 @@ if args.data_type == 'txt':
         x += 1
         skr = Snapshot()
         end_file = open('snapshots.txt', 'a+')
-        sn = "SNAPSHOT " + str(x) + ": " + "TIMESTAMP: " + str(time.ctime())
-        en = sn + skr.var()
+        sn = ": " + "TIMESTAMP: " + str(time.ctime())
+        en = skr.var1() + sn + skr.var()
         end_file.write(en)
         end_file.close()
         time.sleep(args.interval)
