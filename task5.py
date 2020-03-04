@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 # Start coordinate
 robot = input("Robot movement: \n")
@@ -8,14 +8,15 @@ y = 0
 # Robot movement
 for m in robot:
     if m == 'L':
-        x = x - 1
+        x -= x
     elif m == 'R':
-        x = x + 1
+        x += x
     elif m == 'U':
-        y = y + 1
+        y += y
     elif m == 'D':
-        y = y - 1
+        y -= y
     else:
-        y = y - 1
+        y -= y
+
 # Output
-print("Circular motion:\n", (x == 0 and y == 0))
+print ("Circular motion:\n", (x == 0 and y == 0))
