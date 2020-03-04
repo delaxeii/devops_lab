@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 n = int(input("Enter number \n: "))
 fact = 1
 
