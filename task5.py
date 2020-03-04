@@ -19,4 +19,4 @@ for m in robot:
         y -= y
 
 # Output
-print ("Circular motion:\n", (x == 0 and y == 0))
+print("Circular motion:\n", (x == 0 and y == 0))
