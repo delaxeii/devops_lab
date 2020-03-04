@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 string = input("Enter string with spaces \n: ")
 len = string.split()
