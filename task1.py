@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 n = int(input())
 students = {}
 for i in range(n):
