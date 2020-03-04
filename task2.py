@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 keys= str(input("Enter keys through spaces \n: "))
 listkeys = keys.split(" ")
 values = str(input("Enter values through spaces \n: "))
