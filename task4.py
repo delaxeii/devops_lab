@@ -42,7 +42,7 @@ file = rec.json()
 output = "Current pull request" + file["title"]
 
 if args.created:
-    output += " Creation date: " + file['created_at'][:10] + " Timestamp:" + file["created_at"][12:19]
+    output += " Creation date: " + file['created_at'][:10]
 if args.status:
     output += " Request status: " + file['labels'][0]['name']
 if args.change:
