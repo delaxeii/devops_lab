@@ -65,6 +65,5 @@ elif args.data_type == 'json':
             json.dump(s, f)
             f = open('snapshots.json', 'a+')
             f.write('\n')
-            f.close()
 
         time.sleep(args.interval)
