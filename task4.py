@@ -35,8 +35,9 @@ try:
 except Exception as err:
     print("Wrong Github password", err)
 
-rec = requests.get('https://api.github.com/repos',
-'/', args.user, '/', args.repo, '/pulls/', args.number, auth=(user, passw))
+url = 'https://api.github.com/repos' + '/', args.user + '/' + args.repo + '/pulls/' + args.number
+
+rec = requests.get(url=url, auth=(user, passw))
 
 file = rec.json()
 output = "Current pull request" + file["title"]
