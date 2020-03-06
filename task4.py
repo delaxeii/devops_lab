@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-string = input("Enter string with spaces \n: ")
-len = string.split()
-string1 = '-'.join(len)
+string = input('Enter string with spaces: ')
+string1 = string.replace(' ', '-')
 print(string1)
