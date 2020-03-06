@@ -3,6 +3,7 @@
 import task4
 import unittest
 
+
 class TestPrime(unittest.TestCase):
     def setUp(self):
         """Init"""
@@ -12,6 +13,7 @@ class TestPrime(unittest.TestCase):
 
     def tearDown(self):
         """Finish"""
+
 
 if __name__ == '__main__':
     unittest.main()
