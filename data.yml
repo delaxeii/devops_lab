@@ -1,0 +1,7 @@
+apache_vhosts:
+  - servername: www.domain.tld
+    documentroot: /www/domain
+  - servername: www.leningrad.com
+    documentroot: /www/domain
+serveradmin: www-admin@foo.example.com
+directorypath: /usr/local/httpd/htdocs
