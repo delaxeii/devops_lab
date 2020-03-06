@@ -1,11 +1,9 @@
 NameVirtualHost *:80
-
 {% for vhost in apache_vhosts %}
-    <VirtualHost *:80>
-        ServerName {{ vhost.servername }}
-        DocumentRoot {{ vhost.documentroot }}
+  <VirtualHost *:80>
+      ServerName {{ vhost.servername }}
+      DocumentRoot {{ vhost.documentroot }}
     </VirtualHost>
-{% endfor %}
 {% if serveradmin %}
 ServerAdmin {{ serveradmin }}
 {% endif %}
@@ -17,3 +15,4 @@ ServerAdmin {{ serveradmin }}
   </Directory>
   [more rules...]
 </VirtualHost>
+{% endfor %}
