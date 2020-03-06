@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import test4
+import tast4
 import unittest
 
 class TestPrime(unittest.TestCase):
