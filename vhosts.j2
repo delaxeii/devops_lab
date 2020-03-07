@@ -3,7 +3,6 @@ NameVirtualHost *:80
   <VirtualHost *:80>
       ServerName {{ vhost.servername }}
       DocumentRoot {{ vhost.documentroot }}
-    </VirtualHost>
 {% if serveradmin %}
 ServerAdmin {{ serveradmin }}
 {% endif %}
@@ -13,6 +12,5 @@ ServerAdmin {{ serveradmin }}
      Order allow,deny
      Allow from all
   </Directory>
-  [more rules...]
 </VirtualHost>
 {% endfor %}
